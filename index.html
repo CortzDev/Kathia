@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nueve años contigo, Kathia 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #160f12;
+    --text-main: #f4eae1;
+    --text-muted: #bdaea3;
+    --accent: #d48c9d;
+    --accent-dark: #8c4a5c;
+    --paper: #22171b;
+  }
+  
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    margin: 0;
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 0%, #2b1820 0%, transparent 70%);
+    color: var(--text-main);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .serif {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+
+  .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 24px;
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+  }
+  .brand {
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .music-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .music-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+  }
+  .kicker {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    margin: 0 0 20px;
+    color: var(--text-main);
+  }
+  .hero h1 i {
+    color: var(--accent);
+  }
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    color: var(--text-muted);
+    margin: 0 auto 40px;
+  }
+  .hero-photo {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(212, 140, 157, 0.2);
+  }
+
+  /* Minimalist Counter */
+  .counter-section {
+    padding: 80px 0;
+    border-top: 1px solid rgba(212, 140, 157, 0.1);
+    border-bottom: 1px solid rgba(212, 140, 157, 0.1);
+    background: rgba(34, 23, 27, 0.3);
+  }
+  .counter-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+  }
+  .counter-item strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+  .counter-item span {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+  }
+
+  /* Photo Gallery / Story */
+  .section {
+    padding: 100px 0;
+  }
+  .section-title {
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--accent);
+    margin: 0 0 15px;
+    font-style: italic;
+  }
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 500px;
+    margin: 0 auto 60px;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .gallery figure {
+    margin: 0;
+    position: relative;
+  }
+  .gallery img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: grayscale(20%) sepia(15%);
+    transition: 0.5s ease;
+  }
+  .gallery img:hover {
+    filter: grayscale(0%) sepia(0%);
+    transform: scale(1.02);
+  }
+  .gallery figcaption {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* The Letter */
+  .letter-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 60px 50px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 140, 157, 0.15);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  .letter-container::before {
+    content: "“";
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    color: rgba(212, 140, 157, 0.1);
+    line-height: 1;
+  }
+  .letter-container p {
+    font-size: 1.1rem;
+    color: #dfd1c8;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .signature {
+    margin-top: 50px;
+    text-align: right;
+  }
+  .signature-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    color: var(--accent);
+    font-style: italic;
+    display: block;
+  }
+
+  /* Footer & Action */
+  .final {
+    text-align: center;
+    padding: 100px 0;
+  }
+  .love-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    margin-top: 30px;
+  }
+  .love-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+  }
+  .hidden-note {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.8s ease;
+  }
+  .hidden-note.show {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 40px;
+  }
+  .hidden-note p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: var(--text-main);
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.8rem;
+    color: #665b5f;
+    letter-spacing: 0.1em;
+  }
+
+  /* Subtle Petals/Hearts */
+  .petal {
+    position: fixed;
+    top: -10%;
+    pointer-events: none;
+    z-index: 5;
+    color: rgba(212, 140, 157, 0.4);
+    animation: fall linear forwards;
+  }
+  @keyframes fall {
+    to { transform: translateY(110vh) rotate(360deg); }
+  }
+
+  @media(max-width: 768px) {
+    .gallery { grid-template-columns: 1fr; gap: 40px; }
+    .gallery img { height: 350px; }
+    .letter-container { padding: 40px 25px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">J & K</div>
+  <button class="music-btn" id="musicBtn">Poner nuestra canción</button>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <div class="kicker">19.09.2017 — 19.09.2026</div>
+    <h1>Nueve años <br><i>eligiéndonos</i>, Kathia.</h1>
+    <p>Casi una década de crecimiento, paciencia y momentos que se han quedado a vivir para siempre en mí.</p>
+    
+    <!-- REEMPLAZA ESTE ENLACE POR UNA FOTO DE USTEDES -->
+    <img src="1.jpeg" alt="Nosotros" class="hero-photo">
+  </section>
+
+  <section class="counter-section">
+    <div class="wrap counter-grid">
+      <div class="counter-item"><strong>9</strong><span>Años juntos</span></div>
+      <div class="counter-item"><strong>108</strong><span>Meses compartidos</span></div>
+      <div class="counter-item"><strong>3287</strong><span>Días de historia</span></div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <h2 class="section-title">Nuestros recuerdos</h2>
+    <p class="section-subtitle">Hemos cambiado desde que éramos niños, pero la decisión de acompañarnos sigue intacta.</p>
+    
+    <div class="gallery">
+      <figure>
+        <!-- REEMPLAZA ESTE ENLACE -->
+        <img src="2.jpeg" alt="Recuerdo 1">
+        <figcaption>Donde todo empezó.</figcaption>
+      </figure>
+      <figure>
+        <!-- REEMPLAZA ESTE ENLACE -->
+        <img src="3.jpeg" alt="Recuerdo 2">
+        <figcaption>Creciendo juntos.</figcaption>
+      </figure>
+      <figure>
+        <!-- REEMPLAZA ESTE ENLACE -->
+        <img src="4.jpeg" alt="Recuerdo 3">
+        <figcaption>Y lo que nos falta por vivir.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="letter-container">
+      <p>Mi amor,</p>
+      <p>Hoy celebramos nueve años juntos. ¡Nueve años! De verdad me cuesta encontrar palabras que alcancen para explicar lo mucho que significa para mí mirar hacia atrás y darme cuenta de todo el camino que hemos recorrido desde que éramos niños.</p>
+      <p>Hemos pasado por distintas etapas, cambiado y madurado, pero qué bonito es saber que en medio de todo, hemos sabido cuidarnos. A veces pienso en todo lo que hemos vivido y me doy cuenta de la suerte que tengo de que seas tú quien me acompaña.</p>
+      <p>Gracias por tu paciencia, por escucharme, por los abrazos que me reinician y por hacerme sentir que nunca estoy solo. Incluso los días difíciles nos han enseñado a valorar mucho más lo que hemos construido con tanto esfuerzo.</p>
+      <p>No doy por sentado nada de esto. Eres parte de mis recuerdos más bonitos y de los sueños que más ganas tengo de cumplir. Si pudiera volver al comienzo, con todo lo que sé hoy, te volvería a elegir sin dudarlo.</p>
+      
+      <div class="signature">
+        <span style="color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">Con todo mi amor,</span><br>
+        <span class="signature-name">Javier</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="final wrap">
+    <h2 class="section-title">Y te seguiría eligiendo</h2>
+    <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">Hoy, mañana y en cada nueva etapa que nos toque descubrir.</p>
+    
+    <button class="love-btn" id="surpriseBtn">Un último detalle</button>
+    <div class="hidden-note" id="note">
+      <p>Mi lugar favorito seguirá siendo donde pueda abrazarte.<br>Feliz aniversario, mi vida. 💕</p>
+    </div>
+  </section>
+</main>
+
+<footer>HECHO CON AMOR · J & K · 2017 — 2026</footer>
+
+<audio id="musica" loop>
+    <source src="nuestra-cancion.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Botón sorpresa
+  const btn = document.getElementById('surpriseBtn');
+  const note = document.getElementById('note');
+  
+  btn.addEventListener('click', () => {
+    note.classList.toggle('show');
+    btn.style.display = 'none'; // Oculta el botón para dejar solo el mensaje final
+    createPetals(30);
+  });
+
+  // Animación suave de pétalos/corazones cayendo
+  function createPetals(amount = 15) {
+    const characters = ['♡', '✧', '♥'];
+    for (let i = 0; i < amount; i++) {
+      setTimeout(() => {
+        const petal = document.createElement('span');
+        petal.className = 'petal';
+        petal.textContent = characters[Math.floor(Math.random() * characters.length)];
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.fontSize = (12 + Math.random() * 15) + 'px';
+        petal.style.animationDuration = (5 + Math.random() * 7) + 's';
+        document.body.appendChild(petal);
+        
+        setTimeout(() => petal.remove(), 12000);
+      }, i * 150);
+    }
+  }
+
+
+const musicBtn = document.getElementById('musicBtn');
+const musica = document.getElementById('musica');
+
+musicBtn.addEventListener('click', async () => {
+    if (musica.paused) {
+        try {
+            await musica.play();
+            musicBtn.textContent = 'Pausar nuestra canción ♡';
+        } catch (error) {
+            alert('No se pudo reproducir la canción. Revisa el archivo MP3.');
+        }
+    } else {
+        musica.pause();
+        musicBtn.textContent = 'Poner nuestra canción';
+    }
+});
+
+</script>
+</body>
+</html>
